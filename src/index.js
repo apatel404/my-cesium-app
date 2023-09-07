@@ -13,15 +13,18 @@ Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJhMDliM
 
 // Initialize the Cesium Viewer in the HTML element with the `cesiumContainer` ID.
 const viewer = new Viewer('cesiumContainer', {
-  terrain: Terrain.fromWorldTerrain(),
+  terrain: Terrain.fromWorldTerrain({
+    requestWaterMask: true,
+    requestVertexNormals: true
+  }),
 });    
 
-// Fly the camera to San Francisco at the given longitude, latitude, and height.
+// Fly the camera to Symphony House at the given longitude, latitude, and height.
 viewer.camera.flyTo({
-  destination: Cartesian3.fromDegrees(-122.4175, 37.655, 400),
+  destination: Cartesian3.fromDegrees(-73.98255, 40.76594, 400),
   orientation: {
     heading: CesiumMath.toRadians(0.0),
-    pitch: CesiumMath.toRadians(-15.0),
+    pitch: CesiumMath.toRadians(-30.0),
   }
 });
 
