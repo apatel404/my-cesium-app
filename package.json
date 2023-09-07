@@ -1,0 +1,39 @@
+{
+  "name": "my-cesium-app",
+  "source": "src/app.js",
+  "scripts": {
+    "clean:output": "rm -rf dist .parcel-cache",
+    "start": "npm run clean:output && parcel src/index.html",
+    "build": "npm run clean:output && parcel build src/index.html"
+  },
+  "repository": "git@github.com:apatel404/my-cesium-app.git",
+  "author": "aakash.patel",
+  "license": "MIT",
+  "devDependencies": {
+    "assert": "^2.0.0",
+    "browserify-zlib": "^0.2.0",
+    "buffer": "^5.5.0||^6.0.0",
+    "events": "^3.1.0",
+    "https-browserify": "^1.0.0",
+    "parcel": "^2.9.3",
+    "parcel-plugin-static-files-copy": "^2.6.0",
+    "process": "^0.11.10",
+    "stream-browserify": "^3.0.0",
+    "stream-http": "^3.1.0",
+    "url": "^0.11.0",
+    "util": "^0.12.3"
+  },
+  "dependencies": {
+    "cesium": "^1.109.0"
+  },
+  "staticFiles": {
+    "staticPath": [
+      "node_modules/cesium/Build/Cesium/Assets",
+      "node_modules/cesium/Build/Cesium/ThirdParty",
+      "node_modules/cesium/Build/Cesium/Widgets",
+      "node_modules/cesium/Build/Cesium/Workers"
+    ],
+    "staticOutDir": "/src/static",
+    "watcherGlob": "**/*"
+}
+}
