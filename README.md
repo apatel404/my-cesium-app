@@ -1,5 +1,7 @@
 # my-cesium-app
-To start this app just run
+How to Run: 
+1. Pull down this repo
+2. Run the following commands
 
 ```
 yarn install
