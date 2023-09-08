@@ -1,6 +1,7 @@
 // The path to the CesiumJS source code
 const cesiumSource = 'node_modules/cesium/Source';
 const cesiumWorkers = '../Build/Cesium/Workers';
+const milsymbol = 'node_modules/milsymbol/dist'
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
 const webpack = require('webpack');
@@ -39,7 +40,7 @@ module.exports = {
                 { from: path.join(cesiumSource, cesiumWorkers), to: 'Workers' },
                 { from: path.join(cesiumSource, 'Assets'), to: 'Assets' },
                 { from: path.join(cesiumSource, 'Widgets'), to: 'Widgets' },
-		{ from: path.join(cesiumSource, 'ThirdParty'), to: 'ThirdParty' }
+		        { from: path.join(cesiumSource, 'ThirdParty'), to: 'ThirdParty' }
             ]
         }),
         new webpack.DefinePlugin({

@@ -4,22 +4,25 @@ import {
   Ion, 
   Terrain, 
   Math as CesiumMath, 
-  IonResource,
-  createWorldTerrainAsync
+  IonResource
 } from 'cesium'
 import { useState } from 'react';
-import { CameraFlyTo, Entity, Primitive, Scene, Viewer, Cesium3DTileset} from 'resium'
+import { CameraFlyTo, Entity, Viewer, Cesium3DTileset} from 'resium'
+
+
 
 
 export default function Cesium() {
   Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJhMDliM2E5OS1jMzkxLTQ5OTQtYWQzOC04ZDU4NWZjNDY1NTIiLCJpZCI6MTY0OTYyLCJpYXQiOjE2OTQwNTE0MDB9.xEzQNmHLfaS09dJyfxcxz_l6tSZK-96nhz4O2Qh9MQI';
-
+  // console.log(new MS.Symbol('SFG-UCI----D' , {size:35}));
   // const terrainProvider = createWorldTerrainAsync();
   //Adding 3D terrain
   const terrainProvider = Terrain.fromWorldTerrain({
     requestWaterMask: false,
     requestVertexNormals: true
   });
+  var sym = new ms.Symbol('SFG-UCI----D',{size:35});
+  
   // const position = Cartesian3.fromDegrees(-74.0707383, 40.7117244, 100);
   
     
@@ -42,7 +45,7 @@ export default function Cesium() {
       {/* //DC */}
       <Cesium3DTileset url={IonResource.fromAssetId(57588)} onReady={handleReady}/>
       
-      {/* //New York, This asset is purposlly offset so it can be seen overlaid with 96188 */}
+      {/* //New York, This asset is purposlly offset so it can be seen overlaid with The World */}
       <Cesium3DTileset url={IonResource.fromAssetId(2264354)} onReady={handleReady}/>
       
       {/* // Fly to Manhattan -74.00952, 40.70549 */}
@@ -56,6 +59,13 @@ export default function Cesium() {
         point={{ pixelSize: 20, color: Color.WHITE }}
         description="hoge"
         onClick={() => setFlag(f => !f)}
+        billboard = { {
+          // image : sym.getMarker().asCanvas(), //Get the canvas for the billboard
+          pixelOffset : new Cesium.Cartesian2(-sym.markerAnchor.x, -sym.markerAnchor.y), // Symbol offset
+          eyeOffset : new Cesium.Cartesian3(0.0, 0.0, 0.0), // default
+          horizontalOrigin : Cesium.HorizontalOrigin.LEFT, // default
+          verticalOrigin : Cesium.VerticalOrigin.TOP
+        }}
       />
       {flag && (
         <Entity

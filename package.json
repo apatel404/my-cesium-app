@@ -1,24 +1,25 @@
-// {
-//   "name": "my-cesium-app",
-//   "repository": "git@github.com:apatel404/my-cesium-app.git",
-//   "author": "aakash.patel",
-//   "license": "MIT",
-//   "main": "index.js",
-//   "scripts": {
-//     "build": "webpack --config webpack.config.js",
-//     "start": "webpack serve --config webpack.config.js --open"
-//   },
-//   "devDependencies": {
-//     "copy-webpack-plugin": "^9.0.1",
-//     "css-loader": "^6.8.1",
-//     "html-webpack-plugin": "^5.5.3",
-//     "style-loader": "^3.3.3",
-//     "url-loader": "^4.1.1",
-//     "webpack": "^5.88.2",
-//     "webpack-cli": "^4.9.1",
-//     "webpack-dev-server": "^4.3.1"
-//   },
-//   "dependencies": {
-//     "cesium": "^1.109.0"
-//   }
-// }
+{
+  "name": "my-cesium-app",
+  "repository": "git@github.com:apatel404/my-cesium-app.git",
+  "author": "aakash.patel",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --config webpack.config.js",
+    "start": "webpack serve --config webpack.config.js --open"
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "^9.0.1",
+    "css-loader": "^6.8.1",
+    "html-webpack-plugin": "^5.5.3",
+    "style-loader": "^3.3.3",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.3.1"
+  },
+  "dependencies": {
+    "cesium": "^1.109.0",
+    "milsymbol": "^2.2.0"
+  }
+}
