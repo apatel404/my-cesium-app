@@ -5,6 +5,7 @@ How to Run:
 
 ```
 yarn install
+yarn build
 yarn start
 ```
 3. When it's running, navigate to http://localhost:8080 and you should be presented with the following view:
